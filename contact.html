@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Aayush Bishnoi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+
+:root{
+  --ink:#0A0A09;
+  --panel:#161613;
+  --line: rgba(243,240,232,0.12);
+  --cream:#F3F0E8;
+  --lime:#D6FA3C;
+  --purple:#B9A6FF;
+  --blue:#9FC6F5;
+  --gold:#F5C947;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--ink);
+  color:var(--cream);
+  font-family:'Archivo',sans-serif;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+a{color:inherit;}
+.wrap{max-width:1220px;margin:0 auto;padding:0 clamp(20px,5vw,64px);}
+
+.grid-bg{position:relative;}
+.grid-bg::before{
+  content:"";
+  position:fixed; inset:0; z-index:0;
+  background-image:radial-gradient(circle, rgba(243,240,232,0.08) 1.4px, transparent 1.5px);
+  background-size:36px 36px;
+  pointer-events:none;
+}
+.glow{
+  position:fixed; inset:0; z-index:0; pointer-events:none;
+  background:
+    radial-gradient(90% 50% at 85% 0%, rgba(214,250,60,0.06), transparent 55%),
+    radial-gradient(70% 50% at 0% 100%, rgba(185,166,255,0.05), transparent 60%);
+}
+
+nav{
+  position:relative; z-index:6;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:26px clamp(20px,5vw,64px);
+  border-bottom:1px solid var(--line);
+}
+.logo{display:flex;align-items:center;gap:11px;text-decoration:none;}
+.logo .mark{
+  width:36px;height:36px;border-radius:8px;background:var(--lime);color:var(--ink);
+  display:flex;align-items:center;justify-content:center;
+  font-weight:900;font-size:16px;letter-spacing:-0.02em;
+}
+.logo .name{font-weight:700;font-size:14.5px;letter-spacing:0.02em;text-transform:uppercase;color:var(--cream);}
+.nav-links{display:flex;align-items:center;gap:clamp(16px,3vw,36px);list-style:none;}
+.nav-links a{
+  position:relative;font-size:12.5px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;
+  color:var(--cream);text-decoration:none;opacity:0.75;padding-bottom:16px;transition:opacity .2s;
+}
+.nav-links a:hover{opacity:1;}
+.nav-links a.active{opacity:1;color:var(--lime);}
+.nav-links a.active::after{
+  content:"";position:absolute;left:50%;bottom:0;transform:translateX(-50%);
+  width:5px;height:5px;border-radius:50%;background:var(--lime);
+}
+.nav-dot{width:7px;height:7px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 4px rgba(214,250,60,0.18);}
+
+section{position:relative;z-index:2;}
+
+.eyebrow{display:flex;align-items:center;gap:11px;margin-bottom:16px;}
+.eyebrow .dot{width:8px;height:8px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 4px rgba(214,250,60,0.2);}
+.eyebrow span{font-size:12.5px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--lime);}
+
+h1.page-title{
+  font-weight:900;text-transform:uppercase;line-height:0.92;
+  font-size:clamp(46px,7.5vw,88px);letter-spacing:-0.01em;color:var(--cream);
+}
+h1.page-title .accent{color:var(--lime);}
+
+.lede{max-width:560px;margin-top:16px;font-size:15.5px;line-height:1.65;color:var(--cream);opacity:0.8;}
+
+.cta{
+  display:inline-flex;align-items:center;gap:9px;
+  font-size:13px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;
+  color:var(--ink);background:var(--lime);padding:14px 24px;border-radius:4px;
+  text-decoration:none;white-space:nowrap;transition:transform .15s ease, opacity .15s ease;
+}
+.cta:hover{transform:translateY(-2px);}
+.cta.ghost{background:transparent;color:var(--cream);border:1px solid var(--line);}
+.cta.ghost:hover{border-color:var(--lime);color:var(--lime);}
+
+.arrow-deco{position:absolute; opacity:0.85; pointer-events:none;}
+
+footer{
+  position:relative;z-index:5;
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;
+  padding:22px clamp(20px,5vw,64px) 28px;border-top:1px solid var(--line);
+  margin-top:clamp(50px,8vh,90px);
+  font-size:11.5px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;
+  color:var(--cream);opacity:0.5;
+}
+
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:26px;}
+
+.chip{
+  font-size:11px;font-weight:600;letter-spacing:0.03em;text-transform:uppercase;color:var(--cream);
+  border:1px solid var(--line);border-radius:20px;padding:7px 14px;
+  display:inline-flex;align-items:center;gap:6px;
+}
+
+.icon-box{
+  width:52px;height:52px;border-radius:12px;border:1.5px solid var(--lime);
+  display:flex;align-items:center;justify-content:center;color:var(--lime);font-size:22px;
+  margin-bottom:16px;
+}
+
+@media (max-width:760px){
+  h1.page-title{font-size:clamp(40px,15vw,72px);}
+  nav{padding:20px clamp(20px,5vw,64px) 16px;}
+  .nav-links{gap:14px;flex-wrap:wrap;}
+}
+
+
+.contact-hero{padding:clamp(34px,7vh,60px) 0 0; position:relative;}
+.contact-grid{display:grid; grid-template-columns:0.9fr 1.1fr; gap:clamp(30px,5vw,54px); margin-top:clamp(28px,5vh,44px); align-items:start;}
+.squiggle-arrow{margin-top:34px; width:170px;}
+.avail-card{margin-top:24px; display:flex; align-items:center; gap:14px; padding:18px 20px; border-style:dashed;}
+.avail-card .zap{color:var(--lime); font-size:18px; flex-shrink:0;}
+.avail-card p{font-size:13.5px; opacity:0.8;}
+.contact-cards{display:flex; flex-direction:column; gap:14px;}
+.contact-card{display:flex; gap:18px; align-items:flex-start; padding:22px;}
+.c-icon{
+  width:46px;height:46px;border-radius:50%;border:1.5px solid var(--lime);
+  display:flex;align-items:center;justify-content:center; flex-shrink:0;
+  color:var(--lime); font-size:18px;
+}
+.c-body .label{font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--lime);margin-bottom:6px;display:block;font-weight:700;}
+.c-body a.value{font-size:17px; font-weight:700; text-decoration:none; word-break:break-all;}
+.c-body p{font-size:13px; opacity:0.7; margin-top:6px; line-height:1.5;}
+.thanks-strip{
+  margin-top:22px; border:1px dashed var(--line); border-radius:8px;
+  padding:16px 20px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:14px;
+}
+.thanks-strip p{font-size:13.5px; opacity:0.8;}
+@media (max-width:860px){.contact-grid{grid-template-columns:1fr;}}
+
+</style>
+</head>
+<body class="grid-bg">
+<div class="glow"></div>
+
+<nav>
+  <a class="logo" href="index.html">
+    <span class="mark">A</span>
+    <span class="name">Aayush Bishnoi</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="about.html" class="">About</a></li>
+      <li><a href="work.html" class="">Work</a></li>
+      <li><a href="services.html" class="">Services</a></li>
+      <li><a href="process.html" class="">Process</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    <li class="nav-dot"></li>
+  </ul>
+</nav>
+
+
+<section class="contact-hero wrap">
+  <div class="eyebrow"><div class="dot"></div><span>Get In Touch</span></div>
+  <h1 class="page-title">Let's Work<br><span class="accent">Together.</span></h1>
+  <p class="lede">Have a project in mind, or need help with design, development or content? I'd love to hear about it — reach out by email, LinkedIn or WhatsApp.</p>
+
+  <svg class="squiggle-arrow" viewBox="0 0 170 70" fill="none">
+    <path d="M5 20 C 30 55, 60 55, 75 35" stroke="#D6FA3C" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M75 35 L155 15" stroke="#D6FA3C" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M140 8 L155 15 L145 25" stroke="#D6FA3C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </svg>
+
+  <div class="avail-card card">
+    <div class="zap">⚡</div>
+    <p>Currently available for freelance projects, collaborations and creative opportunities.</p>
+  </div>
+
+  <div class="contact-grid">
+    <div></div>
+    <div class="contact-cards">
+      <div class="card contact-card">
+        <div class="c-icon">✉</div>
+        <div class="c-body">
+          <span class="label">Email</span>
+          <a class="value" href="mailto:aayushbishnoi.work@gmail.com">aayushbishnoi.work@gmail.com</a>
+          <p>For project inquiries, collaborations and business discussions.</p>
+        </div>
+      </div>
+      <div class="card contact-card">
+        <div class="c-icon">in</div>
+        <div class="c-body">
+          <span class="label">LinkedIn</span>
+          <a class="value" href="https://www.linkedin.com/in/aayush-bishnoi-5b76333b0" target="_blank" rel="noopener">linkedin.com/in/aayush-bishnoi</a>
+          <p>Connect with me professionally and stay updated with my work.</p>
+        </div>
+      </div>
+      <div class="card contact-card">
+        <div class="c-icon">☎</div>
+        <div class="c-body">
+          <span class="label">WhatsApp</span>
+          <a class="value" href="https://wa.me/917357500051" target="_blank" rel="noopener">+91 73575 00051</a>
+          <p>Available on WhatsApp for quick communication and project discussions.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="thanks-strip">
+    <p>Thanks for visiting — I'll get back to you as soon as possible.</p>
+    <a class="cta" href="tel:+917357500051">Let's Connect →</a>
+  </div>
+</section>
+
+
+<footer>
+  <span>Freelance Web &amp; Graphic Design</span>
+  <span>Based in Hisar, India</span>
+</footer>
+
+</body>
+</html>
