@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bishnoiaayush552-debug.github.io/Portfolio-site/sitemap.xml
