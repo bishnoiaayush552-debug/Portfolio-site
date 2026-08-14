@@ -3,32 +3,26 @@
 
   <url>
     <loc>https://bishnoiaayush552-debug.github.io/Portfolio-site/</loc>
-    <priority>1.0</priority>
   </url>
 
   <url>
     <loc>https://bishnoiaayush552-debug.github.io/Portfolio-site/about.html</loc>
-    <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://bishnoiaayush552-debug.github.io/Portfolio-site/services.html</loc>
-    <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://bishnoiaayush552-debug.github.io/Portfolio-site/work.html</loc>
-    <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://bishnoiaayush552-debug.github.io/Portfolio-site/process.html</loc>
-    <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://bishnoiaayush552-debug.github.io/Portfolio-site/contact.html</loc>
-    <priority>0.9</priority>
   </url>
 
 </urlset>
